@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block content %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for each in author %}
+    <li><a href="/author/{{ each.id }}">{{ each.first_name }} {{ each.last_name }}</a></li>
+{% endfor %}
+</body>
+{% endblock %}
+</html>

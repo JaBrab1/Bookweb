@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="interface ">
+<div class="col-12 ">
+
+
+{#{% if user.is_authenticated %}#}
+<table class="table ">
+<ul><a href="/profile/{{ user.id }}">{{ user }}</a></ul>
+
+<ul>    <a href="/accounts/{{ user.id }}/update/">Edytuj</a></ul>
+<ul>    <a href="/logout/"> Wyloguj</a></ul>
+<p>Twoje ostatnie komentarze:</p>
+{% for comment in user.bookgrades_set.all %}
+    <li><a href="/book/{{ comment.book.id }}">{{ comment.book }}</a> |
+        <a href="/author/{{ comment.book.author.id }}">{{ comment.book.author }}</a></li>
+    <ul>{{ comment.grade }} | {{ comment.comment }}</ul></table>
+    </div>
+    </div>
+{% endfor %}
+{% endblock %}
+{#        {%  else %}#}
+{#          <a href="/login/">Zaloguj</a>#}
+{#            <p style="display: inline-block;">||</p>#}
+{#          <a href="/register/">&nbspZarejestruj</a>#}
+{#{% endif %}#}
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+    {%  load static %}
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <title> &#128526; Bookweb.</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+{#    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">#}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     </head>
+
+    <body>
+<div class="wrapper">
+    <header>
+<nav class="nav navbar-nav navbar-expand-lg fixed-top" role="navigation">
+                <div class="container">
+                    <div class="logo">
+                        <a href="/"><img src="static/img/logo2.png"></a>
+                    </div>
+                    <ul>
+                        <li><a href="/add_author/">Dodaj Autora.</a></li>
+                        <li><a href="/add_book/">Dodaj Książkę.</a></li>
+
+{#            <li><a href="/">Strona główna</a> </li>#}
+            {% if user.is_authenticated %}
+        <li class="log"><a href="/profile/{{ user.id }}">{{ request.user }}</a></li><li class="log"><a href="/logout/"> Wyloguj</a></li>
+            <li class="log"><a href="/user_interface/{{ user.id }}">Panel Użytkownika</a></li>
+        {%  else %}
+                        <li class="log"><a href="/accounts/login/">Zaloguj</a></li>
+                        <li class="log"><a href="/register/">&nbspZarejestruj</a></li>
+                        {% endif %}
+
+
+                    </ul>
+                </div>
+            </nav>
+    <div class="header page-header" style="background-image: url(static/img/background.png);">
+                <div class="header-title">
+                    <div class="text-content text-center">
+
+{#                        -----------------------------------------------------------------wyszukiwarka#}
+                        {% block content %}
+                            <h1 class="headline presentation-subtitle">Bookweb.</h1>
+                        <h2 class="subheadline">Oceniaj książki - nie po okładce!</h2>
+                           <form class="search" method="post">
+
+        {% csrf_token %}
+        {{ form_search.as_p }}
+        <input type="submit" value="Szukaj">
+    </form>
+{#                        --------------------------------------------------------------------------------#}
+                    </div>
+                </div>
+            </div>
+</header>
+
+        <div class="col-12 text-center results">
+            <ul>
+        {% for each in search_author %}
+            <li><a href="/author/{{ each.id }}"> {{ each }}</a></li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for each in search_book %}
+            <li><a href="/book/{{ each.id }}"> {{ each }}</a></li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for each in search_publisher %}
+            <li><a href="/publisher/{{ each.id }}"> {{ each }}</a></li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+        </div>
+<div class="aboutus-area" id=about>
+                <div class="container">
+                    <div class="row">
+                            <div class="col-12">
+                                <h1><span>O nas</span></h1>
+                                <div class="aboutus-content col-8 d-print-inline col-md-offset-3">
+
+                                    <h2>Bookweb <span>to my!</span></h2>
+
+                                    <p class="d-print-inline">Jesteśmy jedynym najlepszym portalem służącym do oceny publikacji książkowych w całej Polsce! Dołącz do nas i korzystaj z możliwości publikacji własnych recenzji książkowych, oraz ocen, aby świat fanów literatury uczynić lżejszym i przyjemniejszym!</p>
+
+
+{#                                    <div class="counter ">#}
+{#                                        <div class="col-12">#}
+{#                                            <div class="single-counter text-center">#}
+{#                                                <h2 class="counter"><span>15</span></h2>#}
+{#                                                <p>UŻYTKOWNIKÓW</p>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="single-counter text-center">#}
+{#                                                <h2 class="counter"><span>100</span></h2>#}
+{#                                                <p>DODANYCH KSIĄŻEK</p>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="single-counter text-center">#}
+{#                                                <h2 class="counter"><span>5</span></h2>#}
+{#                                                <p>WYSTAWIONYCH RECENZJI</p>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="single-counter text-center">#}
+{#                                                <h2 class="counter"><span>10</span></h2>#}
+{#                                                <p>DODANYCH ZDJĘĆ</p>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                                </div>
+                                <!-- <img src="img/about.jpg" class="about-img col-12 col-sm-6 float-right d-print-inline">  -->
+                            </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+{#    <footer>#}
+{#        <div class="container">#}
+{#        </div>#}
+{#    </footer>#}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        </body>
+
+</html>

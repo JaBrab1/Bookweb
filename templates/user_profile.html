@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{ user.username }}</h1>
+<p><b>Z nami od:</b> {{ user.date_joined }}</p>
+<p>Ostatnie komentarze:</p>
+{% for comment in user.bookgrades_set.all %}
+    <li><a href="/book/{{ comment.book.id }}">{{ comment.book }}</a> |
+        <a href="/author/{{ comment.book.author.id }}">{{ comment.book.author }}</a></li>
+    <ul>{{ comment.grade }} | {{ comment.comment }}</ul>
+{% endfor %}
+
+{% endblock %}
+</body>
+</html>

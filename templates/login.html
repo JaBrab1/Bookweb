@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+<head>
+</head>
+<body>
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Zaloguj">
+</form>
+{% endblock %}
+</body>
+
+
+
+
+{##}
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block title %}Logowanie{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <form method="post">#}
+{#       <h2>Logowanie</h2>#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <input type="submit" value="zaloguj">#}
+{#    </form>#}
+{#{% endblock %}#}

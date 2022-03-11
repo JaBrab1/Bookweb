@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 820px;
+}
+header {
+    background-color: #0d6efd;
+    width: 2000px;
+    height: 100vh;
+}

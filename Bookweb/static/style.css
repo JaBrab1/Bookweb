@@ -1,0 +1,419 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    display: block;
+}
+
+article {
+    text-align: center;
+    margin-top: 8vh;
+}
+
+
+nav {
+    display: inline-block;
+    list-style: none;
+    height: 10vh;
+    background: #f3f3f4;
+    border-bottom: 3px solid #2b2943;
+    z-index: 1;
+}
+.results li{
+    list-style: none;
+}
+
+nav .container, footer .container {
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    margin-top: 22px;
+}
+
+nav li {
+    display: inline;
+    list-style: none;
+    padding: 5px;
+}
+
+.logo img {
+    float: left;
+    height: 4rem;
+    width: 4rem;
+    padding: 14px;
+}
+.interface {
+
+}
+
+.log a {
+    margin-right: 0;
+    float: right;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+nav a {
+    font-family: 'Unica One', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: #2b2943;
+    background: linear-gradient(currentColor, currentColor) bottom / 0 .1em no-repeat;
+    transition: 1.2s background-size;
+}
+
+nav a:hover,
+li a:active,
+li a:focus {
+    text-decoration: none;
+    color: #80e9ed;
+    background-size: 100% .1em;
+}
+
+.headline {
+	letter-spacing: 5px;
+	text-align: center;
+	/*text-transform: uppercase;*/
+	font-weight: 700;
+	size: 4rem;
+	}
+
+
+.header{
+    min-height: 70vh;
+}
+
+.header-title {
+    position: absolute;
+    margin-top: 25vh;
+    text-align: center;
+    color: #2b2943;
+}
+
+.flex .presentation-subtitle {
+    align-items: center;
+}
+
+.header-title {
+    width: 100%;
+}
+
+
+.page-header {
+    background: linear-gradient(to right, #9abbb4, #b2cfca, #accdc6);
+    background-repeat: no-repeat;
+}
+
+main {
+    margin-top: 45px;
+    z-index: 2;
+    padding: 12px 20vh!important;
+    background: #fff;
+    min-height: 55vh;
+}
+
+#head {
+    margin-left: 7%;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-color: #2b2943;
+}
+
+#head p {
+    position: absolute;
+    font-family: 'Hind Vadodara', sans-serif;
+    font-size: 7rem;
+    color: #2b2943;
+    text-transform: uppercase;
+    text-align: justify;
+    display: inline;
+    padding: 0px 0px 0px 0px;
+    margin-top: 4%;
+    margin-right: 3vh;
+    margin-left: 13vh;
+}
+
+#head img {
+    height: 40vh;
+    width: 100%;
+    width: auto;
+    z-index: 1;
+}
+
+#zolwie {
+    min-height: 100vh;
+    z-index: 3;
+}
+
+
+#ob {
+    display: block;
+}
+.search {
+    display: inline;
+
+}
+
+#ob p {
+    font-family: 'Hind Vadodara', sans-serif;
+    font-size: 1.1rem;
+    text-align: justify;
+    display: inline-block;
+    padding: 0px 0px 0px 0px;
+    margin-top: 5vh;
+    margin-right: 38vh;
+    margin-left: 10vh;
+}
+
+.title {
+    margin-top: 25px;
+    margin-bottom: 55px;
+    letter-spacing: 4px;
+    color: #2b2943;
+}
+
+.post {
+    background-color: #FFF;
+    box-shadow: 0 0 1px #CCC;
+}
+
+.post img {
+    height: 398px;
+}
+
+.post .content {
+    padding: 15px;
+}
+
+.post .author {
+    font-size: 11px;
+    color: #737373;
+    padding: 25px 30px 20px;
+}
+
+.post .post-img-content{
+    height: 403px;
+    width: auto;
+    position: relative;
+}
+
+
+.post .post-title {
+    display: table-cell;
+    vertical-align: bottom;
+    z-index: 2;
+    position: relative;
+}
+
+.post .post-title b {
+    background-color: rgba(51, 51, 51, 0.58);
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #FFF;
+    padding: 10px 15px;
+    margin-top: 5px;
+}
+
+.btn-success {
+    background-color: #2b2943;
+    border-color: #2b2943;
+    font-weight: 700;
+
+}
+
+.btn-success:hover {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: black;
+
+}
+
+.btn-success:hover, a:hover {
+    text-decoration: none;
+}
+
+.btn-warning:hover {
+    background-color: #2b2943;
+    border-color: #2b2943;
+    color: white;
+}
+
+.btn-check:active {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: black;
+}
+
+section {
+    margin-bottom: 150px;
+}
+
+section p {
+    font-size: 1.2rem;
+    display: inline;
+}
+
+.aboutus-area {
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+
+.aboutus-area h1 {
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+/*-- aboutus Image --*/
+.aboutus-image {
+  margin: 0px;
+  width: 480px;
+    height:500px;
+}
+
+.about-img {
+    width: 480px;
+    height: auto;
+    margin: 0;
+}
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .aboutus-image {
+      margin-right: 35px;
+      width: 345px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .aboutus-image {
+         margin-bottom: 30px;
+        float: none;
+        }
+    }
+
+  @media only screen and (max-width: 767px) {
+    .aboutus-image {
+      margin-bottom: 30px;
+      margin-right: 0;
+      float: none;
+      width: auto;
+     }
+
+    .hidden-sm {
+      display: block!important;
+      width: 340px;
+      height: 85%;
+  }
+  }
+  .aboutus-image img {
+      height:100%;
+    width: 100%;
+}
+
+/*-- aboutus Content --*/
+.aboutus-content h2 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 40px;
+  margin-bottom: 2px;
+}
+
+  @media only screen and (max-width: 479px) {
+    .aboutus-content h2 {
+      font-size: 30px;
+      line-height: 30px;
+    }
+}
+
+  .aboutus-content h2 span {
+    color: #2b2943;
+}
+
+.aboutus-content h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #9b9b9b;
+  margin-bottom: 23px;
+}
+
+.aboutus-content p {
+  font-size: 16px;
+  line-height: 27px;
+ }
+
+ /*-- counter --*/
+.single-counter {
+  border:none;
+  margin-top: 32px;
+  float: left;
+  width: 100%;
+}
+
+.single-counter {
+    float: left;
+    width: 25%;
+    padding: 28px 15px 28px;
+}
+
+    @media only screen and (max-width: 767px) {
+      .counter .single-counter {
+        width: 50%;
+    }
+
+    .counter .single-counter + .single-counter {
+      border-left: none;
+    }
+
+    .counter .single-counter h2 {
+      font-size: 30px;
+      color: #71b100;
+      line-height: 24px;
+      font-family: "Open Sans", sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .counter .single-counter p {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 0;
+      color: #8f8f8f;
+    }
+}
+
+footer {
+    background-color: #f3f3f4;
+    height: 10vh;
+    border-top: 3px solid #2b2943;
+}
+
