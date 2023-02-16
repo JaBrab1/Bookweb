@@ -145,7 +145,7 @@ class BookDetailView(View):
         except:
             grade = request.POST.get('grade')
             comment = request.POST.get('comment')
-            BookGrades.objects.create(
+            BookGrades.objects.update(
                 user=user,
                 book=book,
                 comment=comment,
